@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+import Stigmergy.views
+import manejador_Ordenes.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('orden/', include('Orden.urls')),
+    path('manejador',manejador_Ordenes.views.interfazManejador),
+    path('home',Stigmergy.views.home)
 ]
