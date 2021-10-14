@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home, name='home'),
     path('orden/', include('Orden.urls')),
+    path('SAP/', include('SAP.urls')),
 ]

@@ -1,8 +1,8 @@
 import json
-
 from .logic import logic_SAP
 from django.views.decorators.csrf import csrf_exempt
 from Orden.views import update_orden_view
+from Orden.logic.logic_orden import get_specific_orden
 from django.http import HttpResponse
 from django.core import serializers
 import time
@@ -16,12 +16,14 @@ def SAPApi(request,id=0):
         serializeOrdenSAP = serializers.serialize('json', [ordenSAP])
         return HttpResponse(serializeOrdenSAP, content_type='application/json')
     elif request.method == 'POST':
-        ordenSAP = serializers.deserialize('json', request.body)
+        data = json.loads(request.body)
+        ordenSAP = [get_specific_orden(data['pk']),data['fields']['estado']]
         logic_SAP.create_Orden_SAP(ordenSAP)
         return HttpResponse("Orden creada en SAP satisfactoriamente")
     elif request.method == 'PUT':
         data = json.loads(request.body)
         id = data['pk']
+        print(id)
         for i in estadosPosibles:
             update_orden_SAP_view(id, i)
             time.sleep(1)
@@ -30,18 +32,9 @@ def SAPApi(request,id=0):
         serializeUpdateSAP = serializers.serialize('json', [update])
         return HttpResponse(serializeUpdateSAP, content_type='application/json')
 
-
-def get_orden_SAP_view(request, id):
-    ordenSAP = logic_SAP.get_orden_SAP(id)
-    serializeOrdenSAP = serializers.serialize('json', [ordenSAP])
-    return HttpResponse(serializeOrdenSAP, content_type='application/json')
-
 def update_orden_SAP_view(id, pEstado):
     update = logic_SAP.update_estado_orden_SAP(id, pEstado)
     time.sleep(1)
     update_orden_view(id, pEstado)
     serializeUpdateSAP = serializers.serialize('json', [update])
     return HttpResponse(serializeUpdateSAP,content_type='application/json')
-
-
-

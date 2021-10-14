@@ -10,5 +10,5 @@ def update_estado_orden_SAP(id, pEstado):
     return updateEstadoOrdenSAP
 
 def create_Orden_SAP(ordenSAP):
-    p = SAP.objects.create(orden=ordenSAP.orden, estado=ordenSAP.estado)
+    p = SAP.objects.create(orden=ordenSAP[0], estado=ordenSAP[1])
     return p
