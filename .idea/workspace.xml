@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28644142-bcf0-478f-9c8b-de9118b82aa1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orden/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Orden/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orden/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Orden/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stigmergy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stigmergy/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="28644142-bcf0-478f-9c8b-de9118b82aa1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,7 +35,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LabDjango/TallerDjango-Vistas" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -82,6 +79,15 @@
       <updated>1632753735963</updated>
       <workItem from="1632753779078" duration="271000" />
       <workItem from="1633061142145" duration="1399000" />
+      <workItem from="1633073292976" duration="1274000" />
+      <workItem from="1633109159147" duration="608000" />
+      <workItem from="1634033827150" duration="4435000" />
+      <workItem from="1634045067678" duration="2739000" />
+      <workItem from="1634052284430" duration="726000" />
+      <workItem from="1634054840978" duration="1128000" />
+      <workItem from="1634073169465" duration="17558000" />
+      <workItem from="1634143125510" duration="3496000" />
+      <workItem from="1634158800680" duration="9153000" />
     </task>
     <servers />
   </component>
