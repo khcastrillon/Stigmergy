@@ -22,11 +22,17 @@ def SAPApi(request,id=0):
     elif request.method == 'PUT':
         data = json.loads(request.body)
         id = data['pk']
-        for i in estadosPosibles:
-            update_orden_SAP_view(id, i)
-            time.sleep(1)
-        update = logic_SAP.update_estado_orden_SAP(id, 'Lista para recoger')
-        update_orden_view(id, 'Lista para recoger')
+        estado = data['fields']['estado']
+
+        #Simulación  SAP, cuando haya UI se habilita
+        # for i in estadosPosibles:
+        #     update_orden_SAP_view(id, i)
+        #     time.sleep(1)
+        # update = logic_SAP.update_estado_orden_SAP(id, 'Lista para recoger')
+        # update_orden_view(id, 'Lista para recoger')
+
+        update = logic_SAP.update_estado_orden_SAP(id, estado)
+        update_orden_view(id, estado)
         serializeUpdateSAP = serializers.serialize('json', [update])
         return HttpResponse(serializeUpdateSAP, content_type='application/json')
 
