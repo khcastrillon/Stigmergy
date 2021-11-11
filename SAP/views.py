@@ -18,15 +18,16 @@ def SAPApi(request,id=0):
     elif request.method == 'POST':
         data = json.loads(request.body)
         try:
-            serializeOrden = serializers.serialize('json', [get_orden_view(data['pk'])])
-            if serializeOrden['fields']['token'] == data['fields']['token']:
+            serializeOrden = serializers.serialize('json', [get_orden_view(data['pk']),])
+            data1 = json.loads(serializeOrden)[0]
+            if data1['fields']['token'] == data['fields']['token']:
                 ordenSAP = [get_orden_view(data['pk']), data['fields']['estado']]
                 logic_SAP.create_Orden_SAP(ordenSAP)
                 return HttpResponse("Orden creada en SAP satisfactoriamente")
             else:
-                return HttpResponse("Error token: la orden no ha sido creada en SAP")
-        except:
-            return HttpResponse("Error: la orden no ha sido creada en SAP" + serializeOrden)
+                return HttpResponse("Error token: la orden no ha sido creada en SAP "+"Real: "+data1['fields']['token']+" Falso: "+data['fields']['token'])
+        except Exception as e:
+            return HttpResponse("Error: la orden no ha sido creada en SAP")
 
     elif request.method == 'PUT':
         data = json.loads(request.body)
